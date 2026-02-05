@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eastern India's Hidden Gems - Explore 126 Sacred & Natural Wonders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e0f;
+            --bg-secondary: #111619;
+            --text-primary: #ffffff;
+            --text-secondary: #b4bcc4;
+            --accent-gold: #d4a574;
+            --accent-orange: #e8915d;
+            --border-color: #2a3036;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%),
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-logo {
+            width: auto;
+            height: auto;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-logo img {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+            display: block;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* TAGLINE STYLES */
+        .font-accent {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .text-forest-muted {
+            color: var(--text-secondary);
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .tracking-wide {
+            letter-spacing: 0.08em;
+        }
+
+        .max-w-xl {
+            max-width: 36rem;
+        }
+
+        /* BUTTON STYLES */
+        .mt-12 {
+            margin-top: 3rem;
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .border {
+            border: 1px solid;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .tracking-widest {
+            letter-spacing: 0.1em;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        .duration-500 {
+            transition-duration: 500ms;
+        }
+
+        button[data-testid="hero-cta-button"] {
+            background: transparent;
+            color: var(--accent-gold);
+            border-color: rgba(212, 163, 115, 0.5);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        button[data-testid="hero-cta-button"]:hover {
+            background: rgba(212, 163, 115, 0.1);
+            border-color: var(--accent-gold);
+        }
+
+        /* HERO NAVIGATION LINKS */
+        .hero-nav-links {
+            position: absolute;
+            right: 2rem;
+            top: 5%;
+            transform: translateY(0);
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            z-index: 10;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: all 0.3s;
+            position: relative;
+            padding-bottom: 0.5rem;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-gold);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 1200px) {
+            .hero-nav-links {
+                right: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-link {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-nav-links {
+                display: none;
+            }
+        }
+
+        .hero-button {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .hero-button:hover {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent-gold);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* NAVIGATION - HIDDEN */
+        nav {
+            display: none;
+        }
+
+        /* FILTER SECTION */
+        .filter-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .filter-group select {
+            padding: 0.7rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        /* PLACES GRID */
+        .places-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .place-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .place-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.1);
+        }
+
+        .place-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .place-type-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(232, 145, 93, 0.9);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .place-content {
+            padding: 1.5rem;
+        }
+
+        .place-location {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .place-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .place-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .detail-badge {
+            background: rgba(212, 165, 116, 0.1);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .detail-badge.highlight {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            background: none;
+            border: none;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--accent-gold);
+        }
+
+        .modal h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-location {
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .modal-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .modal-section h3 {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .modal-section p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .modal-value {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-tagline {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* EMPTY STATE */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            grid-column: 1/-1;
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .loader {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .search-bar {
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
+
+            .modal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="https://res.cloudinary.com/dddj9k6xk/image/upload/v1770192830/Logo_ytbhl7.png" alt="EIHG Logo" style="width: 35%; height: 35%; object-fit: contain;">
+            </div>
+            <h1>Eastern India's <span>Hidden Gems</span></h1>
+            <p class="font-accent text-xl md:text-2xl text-forest-muted italic tracking-wide max-w-xl" data-testid="hero-subtitle" style="opacity: 1; transform: none;">Where Nature Meets the Sacred</p>
+            <button class="mt-12 px-8 py-4 border border-forest-gold/50 text-forest-gold font-body text-sm tracking-widest uppercase hover:bg-forest-gold/10 transition-all duration-500" data-testid="hero-cta-button" style="opacity: 1; transform: none; border-color: rgba(212, 163, 115, 0.5);" onclick="document.querySelector('.filter-section').scrollIntoView({behavior:'smooth'})">Explore Hidden Gems</button>
+        </div>
+
+        <!-- RIGHT SIDE NAVIGATION LINKS -->
+        <div class="hero-nav-links">
+            <a href="destinations.html" class="nav-link">Destinations</a>
+            <a href="experiences.html" class="nav-link">Experiences</a>
+            <a href="travel-guide.html" class="nav-link">Travel Guide</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- FILTER SECTION -->
+    <section class="filter-section">
+        <div class="filter-grid">
+            <div class="filter-group">
+                <label>Primary Type</label>
+                <select id="typeFilter">
+                    <option value="">All Types</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>District</label>
+                <select id="districtFilter">
+                    <option value="">All Districts</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Difficulty Level</label>
+                <select id="difficultyFilter">
+                    <option value="">All Levels</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Sacred Importance</label>
+                <select id="sacredFilter">
+                    <option value="">All Places</option>
+                    <option value="Yes">Sacred Only</option>
+                    <option value="No">Non-Sacred</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLACES GRID -->
+    <section class="places-section">
+        <div class="section-header">
+            <h2>Discover Hidden Wonders</h2>
+            <p id="resultCount">Loading...</p>
+        </div>
+        <div id="placesContainer" class="places-grid">
+            <div class="loader">Loading places...</div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-tagline">"Preserving stories of nature, faith, and silence."</p>
+            <div class="footer-bottom">
+                &copy; 2024 Eastern India's Hidden Gems. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="placeModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        let allPlaces = [];
+        let filteredPlaces = [];
+
+        const PLACES_DATA = {
+            "total_places": 126,
+            "places": [{"Place ID": "OD-MK-W-001", "Place Name": "Alurkota Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Jungle Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Alurkota village", "Trek Required": "Yes", "Trek Distance (km)": "NA", "Difficulty Level": "Extreme", "Access Type": "Hardcore jungle trek", "River / Water Body": "Local hill stream", "Height / Scale": "Very tall", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Almost Zero", "Ideal For": "Adventure vloggers"}, {"Place ID": "OD-MK-S-001", "Place Name": "Ammakund Sacred Kund", "Primary Type": "Sacred Waterbody", "Secondary Type": "Fish-Protected Pool", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Khoirput", "Trek Required": "Yes", "Trek Distance (km)": "~0.5", "Difficulty Level": "Easy", "Access Type": "Forest path", "River / Water Body": "Natural spring", "Height / Scale": "Deep pool", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Ramayana link", "Temple / Shrine Name": "Ammakunda", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Spiritual + nature"}, {"Place ID": "OD-KD-W-001", "Place Name": "Andharakoti Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Roadside Waterfall", "District": "Kandhamal", "State": "Odisha", "Nearest Town / Village": "G. Udayagiri", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Rajagada hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Thakurani Temple", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Temple + nature"}, {"Place ID": "AP-ASR-S-001", "Place Name": "Araku Tribal Sacred Stream", "Primary Type": "Sacred Landscape", "Secondary Type": "Stream Worship", "District": "Alluri Sitarama Raju", "State": "Andhra Pradesh", "Nearest Town / Village": "Araku interior", "Trek Required": "Yes", "Trek Distance (km)": "Short", "Difficulty Level": "Moderate", "Access Type": "Forest path", "River / Water Body": "Hill stream", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal spirits", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Very Low", "Ideal For": "Ethno-tourism"}, {"Place ID": "OD-KP-W-001", "Place Name": "Bagra Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Picnic Waterfall", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Jeypore", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road + walk", "River / Water Body": "Local stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Medium", "Ideal For": "Families"}, {"Place ID": "OD-MK-D-001", "Place Name": "Balimela Dam", "Primary Type": "Dam", "Secondary Type": "Reservoir", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Balimela", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road", "River / Water Body": "Sileru River", "Height / Scale": "Massive", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Landscape"}, {"Place ID": "OD-MK-D-003", "Place Name": "Balimela Sacred Backwaters", "Primary Type": "Dam", "Secondary Type": "Reservoir Landscape", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Balimela", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road", "River / Water Body": "Sileru River", "Height / Scale": "Massive", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Tribal deities", "Temple / Shrine Name": "Shore shrines", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Slow travel"}, {"Place ID": "OD-MK-W-003", "Place Name": "Bandakund Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Jungle Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Kodabhata", "Trek Required": "Yes", "Trek Distance (km)": "~5", "Difficulty Level": "Difficult", "Access Type": "Dense forest trek", "River / Water Body": "Hill stream", "Height / Scale": "Multi-tier", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Hardcore trekkers"}, {"Place ID": "OD-MB-W-001", "Place Name": "Barehipani Falls", "Primary Type": "Waterfall", "Secondary Type": "Mega Waterfall", "District": "Mayurbhanj", "State": "Odisha", "Nearest Town / Village": "Jashipur", "Trek Required": "Yes (viewpoint)", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest + viewpoint", "River / Water Body": "Budhabalanga River", "Height / Scale": "399 m", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Moderate", "Ideal For": "Landscape photographers"}, {"Place ID": "OD-KP-W-002", "Place Name": "Bari Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Forest Waterfall", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Narayanpatna", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest road", "River / Water Body": "Local stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Offbeat trips"}, {"Place ID": "CG-DT-S-003", "Place Name": "Barsur Hill Ritual Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Hill Shrine", "District": "Dantewada", "State": "Chhattisgarh", "Nearest Town / Village": "Barsur interior", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Forest path", "River / Water Body": "Springs", "Height / Scale": "Hill", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal deity", "Temple / Shrine Name": "Hill shrine", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Very Low", "Ideal For": "Cultural travel"}, {"Place ID": "OD-MK-S-016", "Place Name": "Bayapoda River Confluence", "Primary Type": "Sacred Landscape", "Secondary Type": "River Sangam", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Bayapoda", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Village road", "River / Water Body": "Hill streams", "Height / Scale": "Sangam", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "River deity", "Temple / Shrine Name": "Village shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Cultural mapping"}, {"Place ID": "OD-NB-W-001", "Place Name": "Benakhamar Reserve Falls", "Primary Type": "Waterfall", "Secondary Type": "Forest Waterfall", "District": "Nabarangpur", "State": "Odisha", "Nearest Town / Village": "Tentulikhunti", "Trek Required": "Yes", "Trek Distance (km)": "Unknown", "Difficulty Level": "Moderate", "Access Type": "Forest track", "River / Water Body": "Local stream", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Wildlife lovers"}, {"Place ID": "OD-NB-S-003", "Place Name": "Benakhamar Sacred Forest Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Reserve Forest", "District": "Nabarangpur", "State": "Odisha", "Nearest Town / Village": "Benakhamar RF", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest track", "River / Water Body": "Hill streams", "Height / Scale": "Wide", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal deities", "Temple / Shrine Name": "Forest shrines", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Nature study"}, {"Place ID": "OD-MK-W-005", "Place Name": "Bhainsadhan Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Jungle Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Kodashara", "Trek Required": "Yes", "Trek Distance (km)": "~5", "Difficulty Level": "Difficult", "Access Type": "Jungle trek", "River / Water Body": "Hill stream", "Height / Scale": "Multi-tier", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Trekkers"}, {"Place ID": "OD-NB-W-002", "Place Name": "Bhairaghumar Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Sanctuary Waterfall", "District": "Nabarangpur", "State": "Odisha", "Nearest Town / Village": "Chandahandi", "Trek Required": "Yes", "Trek Distance (km)": "2\u20133", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Local stream", "Height / Scale": "~150 ft", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Nature photographers"}, {"Place ID": "OD-GP-W-001", "Place Name": "Bittarasai Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Border Waterfall", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Jiranga", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Local stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Very Low", "Ideal For": "Quiet escapes"}, {"Place ID": "OD-MK-W-006", "Place Name": "Bondaghati Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Tribal Forest Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Mathili block", "Trek Required": "Yes", "Trek Distance (km)": "Unknown", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Almost Zero", "Ideal For": "Birders"}, {"Place ID": "OD-GP-T-001", "Place Name": "Brahmani Devi (Bamnidevi) Temple", "Primary Type": "Temple", "Secondary Type": "Shakti Shrine + Hill Temple", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Mohana", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road + walk", "River / Water Body": "Hill spring", "Height / Scale": "NA", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Goddess Brahmani", "Temple / Shrine Name": "Brahmani Devi Temple", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Families"}, {"Place ID": "OD-MK-W-007", "Place Name": "Brindhakund Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Local Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Mathili", "Trek Required": "No", "Trek Distance (km)": "<1", "Difficulty Level": "Easy", "Access Type": "Road + walk", "River / Water Body": "Local stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Medium", "Ideal For": "Local tourism"}, {"Place ID": "OD-NB-S-004", "Place Name": "Chandahandi Sacred Riverbank", "Primary Type": "Sacred Landscape", "Secondary Type": "River Ghat", "District": "Nabarangpur", "State": "Odisha", "Nearest Town / Village": "Chandahandi", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road", "River / Water Body": "Local river", "Height / Scale": "Ghat", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Lord Shiva", "Temple / Shrine Name": "River shrine", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Pilgrims"}, {"Place ID": "OD-NB-W-003", "Place Name": "Chandandhara Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Forest Picnic Fall", "District": "Nabarangpur", "State": "Odisha", "Nearest Town / Village": "Jharigam", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Forest road", "River / Water Body": "Local stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Families"}, {"Place ID": "AP-AS-W-001", "Place Name": "Chaprai Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Leisure Cascade", "District": "Alluri Sitarama Raju", "State": "Andhra Pradesh", "Nearest Town / Village": "Araku Valley", "Trek Required": "Yes", "Trek Distance (km)": "~1.5", "Difficulty Level": "Moderate", "Access Type": "Road + walk", "River / Water Body": "Gosthani River", "Height / Scale": "Cascades", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Leisure travelers"}, {"Place ID": "OD-RG-W-001", "Place Name": "Cherkota Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Temple-linked Waterfall", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Kashipur", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Lord Shiva", "Temple / Shrine Name": "Local Shiva shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Spiritual travelers"}, {"Place ID": "OD-KP-W-003", "Place Name": "Chingdi Duduma Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Border Waterfall", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Border villages", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest track", "River / Water Body": "Machkund tributary", "Height / Scale": "Tall", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Explorers"}, {"Place ID": "CG-BS-R-001", "Place Name": "Chitrakote River Shrines", "Primary Type": "Sacred River", "Secondary Type": "Ritual Landscape", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Jagdalpur", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Indravati River", "Height / Scale": "Wide river", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Tribal + Hindu", "Temple / Shrine Name": "River shrines", "Best Time to Visit": "Jul\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Cultural tourism"}, {"Place ID": "CG-BS-W-001", "Place Name": "Chitrakote Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Mega Waterfall", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Jagdalpur", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Indravati River", "Height / Scale": "Wide", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "River worship", "Temple / Shrine Name": "River shrines", "Best Time to Visit": "Jul\u2013Mar", "Crowd Level": "High", "Ideal For": "All travelers"}, {"Place ID": "OD-MK-W-008", "Place Name": "Daldali Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Forest Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Kartanpalli (Mathili)", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Jungle + ghat path", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Extremely Low", "Ideal For": "Nature sounds"}, {"Place ID": "OD-MK-W-009", "Place Name": "Dangadhara Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Forest Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Udulibeda (Mathili)", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest road", "River / Water Body": "Local stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Nature lovers"}, {"Place ID": "OD-GP-W-002", "Place Name": "Dangasil Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Dense Forest Waterfall", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Khajuripada", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest trail", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Offbeat explorers"}, {"Place ID": "OD-MK-W-010", "Place Name": "Dekrajodi Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Roadside Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Kalimela", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Local stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Medium", "Ideal For": "Families"}, {"Place ID": "CG-DT-S-002", "Place Name": "Dholkal Ganesh Sacred Hill Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Hill + Shrine", "District": "Dantewada", "State": "Chhattisgarh", "Nearest Town / Village": "Barsur", "Trek Required": "Yes", "Trek Distance (km)": "Long", "Difficulty Level": "Difficult", "Access Type": "Hardcore trek", "River / Water Body": "Hill springs", "Height / Scale": "Hilltop", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Lord Ganesh", "Temple / Shrine Name": "Dholkal Ganesh", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Pilgrim trekkers"}, {"Place ID": "CG-DW-T-001", "Place Name": "Dholkal Ganesh Temple", "Primary Type": "Temple", "Secondary Type": "Hilltop Shrine", "District": "Dantewada", "State": "Chhattisgarh", "Nearest Town / Village": "Barsur", "Trek Required": "Yes", "Trek Distance (km)": "Long", "Difficulty Level": "Difficult", "Access Type": "Hardcore trek", "River / Water Body": "Hill spring", "Height / Scale": "NA", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Lord Ganesh", "Temple / Shrine Name": "Dholkal Ganesh", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Pilgrims + trekkers"}, {"Place ID": "OD-NB-W-004", "Place Name": "Dokra Dora Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Hidden Forest Fall", "District": "Nabarangpur", "State": "Odisha", "Nearest Town / Village": "Nabarangpur", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Local stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Offbeat travelers"}, {"Place ID": "OD-MK-W-011", "Place Name": "Dudasarunda Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Forest Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Dudasarunda village", "Trek Required": "Yes", "Trek Distance (km)": "Unknown", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Nature lovers"}, {"Place ID": "OD-KP-W-004", "Place Name": "Duduma Falls (Extended Area)", "Primary Type": "Waterfall", "Secondary Type": "Multi-tier Waterfall", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Nandapur", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Steps + path", "River / Water Body": "Machkund River", "Height / Scale": "Multi-tier", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "River worship", "Temple / Shrine Name": "Nearby shrines", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "High", "Ideal For": "Families"}, {"Place ID": "OD-KP-W-005", "Place Name": "Duduma Waterfall (Main)", "Primary Type": "Waterfall", "Secondary Type": "Mega Waterfall", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Machkund", "Trek Required": "Yes", "Trek Distance (km)": 0.8, "Difficulty Level": "Moderate", "Access Type": "Road + steps", "River / Water Body": "Machkund River", "Height / Scale": "~170 m", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "River worship", "Temple / Shrine Name": "Local shrines", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Photographers"}, {"Place ID": "OD-MK-W-012", "Place Name": "Dukaguda Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Forest Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Dukaguda village", "Trek Required": "Yes", "Trek Distance (km)": "Unknown", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Solitude seekers"}, {"Place ID": "OD-RG-W-002", "Place Name": "Durgapadu Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Hill Spring Waterfall", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Sikabadi", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest road", "River / Water Body": "Hill springs", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Weekend trips"}, {"Place ID": "OD-MK-W-013", "Place Name": "Dushasashan Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Powerful Jungle Fall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Udulibeda", "Trek Required": "No", "Trek Distance (km)": "NA", "Difficulty Level": "Difficult", "Access Type": "Rugged terrain", "River / Water Body": "Hill stream", "Height / Scale": "Powerful", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Adventure seekers"}, {"Place ID": "OD-MK-W-014", "Place Name": "Ekagudi Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Tall Perennial Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Salimi (Mathili)", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Farmland trek", "River / Water Body": "Spring", "Height / Scale": "~200 ft", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Picnics"}, {"Place ID": "OD-MK-W-015", "Place Name": "Ekarod Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Remote Jungle Fall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Interior villages", "Trek Required": "No", "Trek Distance (km)": "NA", "Difficulty Level": "Difficult", "Access Type": "Jungle trail", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Hardcore explorers"}, {"Place ID": "OD-RG-W-003", "Place Name": "Gadagada Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Picnic Waterfall", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Gumuda", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road access", "River / Water Body": "Local stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low\u2013Medium", "Ideal For": "Road trips"}, {"Place ID": "OD-KP-W-006", "Place Name": "Galigabdar Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Ghat-Road Waterfall", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Potangi", "Trek Required": "Yes", "Trek Distance (km)": "Short climb", "Difficulty Level": "Moderate", "Access Type": "Ghat road + trek", "River / Water Body": "Hill stream", "Height / Scale": "Cascades", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Scenic drives"}, {"Place ID": "OD-GP-T-002", "Place Name": "Ganadhar Temple", "Primary Type": "Temple", "Secondary Type": "River Shrine + Temple + Falls", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Paralakhemundi", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Mahendratanaya", "Height / Scale": "NA", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "River deity", "Temple / Shrine Name": "Ganadhar Temple", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Local worship"}, {"Place ID": "OD-GP-W-003", "Place Name": "Ganadhar Waterfall", "Primary Type": "Waterfall", "Secondary Type": "River Waterfall", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Paralakhemundi", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Mahendratanaya", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "River deity", "Temple / Shrine Name": "Ganadhar Temple", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Short visits"}, {"Place ID": "OD-GP-S-002", "Place Name": "Gandahati Sacred Landscape", "Primary Type": "Sacred Landscape", "Secondary Type": "Temple + Waterfall", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Paralakhemundi", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road access", "River / Water Body": "Mahendratanaya", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Gandahati Temple", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Medium", "Ideal For": "Family pilgrims"}, {"Place ID": "OD-GP-W-004", "Place Name": "Gandahati Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Popular River Fall", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Paralakhemundi", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road access", "River / Water Body": "Mahendratanaya", "Height / Scale": "Wide", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Nearby temples", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Medium", "Ideal For": "Families"}, {"Place ID": "OD-GP-W-005", "Place Name": "Gandhakath Waterfall", "Primary Type": "Waterfall", "Secondary Type": "River Gorge Fall", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Paralakhemundi", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "River access", "River / Water Body": "Mahendratanaya", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Nature lovers"}, {"Place ID": "OD-KL-S-003", "Place Name": "Gandhamardan Forest Shrine", "Primary Type": "Sacred Landscape", "Secondary Type": "Forest Temple", "District": "Kalahandi", "State": "Odisha", "Nearest Town / Village": "Gandhamardan hills", "Trek Required": "Yes", "Trek Distance (km)": "Varies", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Springs", "Height / Scale": "Forest", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Shiva", "Temple / Shrine Name": "Forest shrine", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Very Low", "Ideal For": "Pilgrim trekkers"}, {"Place ID": "OD-KL-W-001", "Place Name": "Gandhamardan Mini Falls", "Primary Type": "Waterfall", "Secondary Type": "Seasonal Cascades", "District": "Kalahandi", "State": "Odisha", "Nearest Town / Village": "Bhawanipatna", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Hill streams", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Very Low", "Ideal For": "Nature walks"}, {"Place ID": "OD-KL-S-001", "Place Name": "Gandhamardan Sacred Hills", "Primary Type": "Sacred Landscape", "Secondary Type": "Hill Temples", "District": "Kalahandi", "State": "Odisha", "Nearest Town / Village": "Bhawanipatna", "Trek Required": "Yes", "Trek Distance (km)": "Varies", "Difficulty Level": "Moderate", "Access Type": "Forest paths", "River / Water Body": "Springs", "Height / Scale": "Hill range", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Shiva / local deities", "Temple / Shrine Name": "Hill shrines", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Low", "Ideal For": "Pilgrimage"}, {"Place ID": "OD-MK-W-016", "Place Name": "Garia Duduma Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Multi-cascade Jungle Fall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Govindpalli", "Trek Required": "Yes", "Trek Distance (km)": "3\u20135", "Difficulty Level": "Difficult", "Access Type": "Jungle trek + guide", "River / Water Body": "Hill stream", "Height / Scale": "Multi-cascade", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Almost Zero", "Ideal For": "Nature lovers"}, {"Place ID": "OD-NB-T-001", "Place Name": "Ghumareswar Mahadev", "Primary Type": "Temple", "Secondary Type": "Shiva Shrine", "District": "Nabarangpur", "State": "Odisha", "Nearest Town / Village": "Chandahandi", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Rough road", "River / Water Body": "Local stream", "Height / Scale": "NA", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Lord Shiva", "Temple / Shrine Name": "Ghumareswar Mahadev", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Pilgrimage"}, {"Place ID": "OD-KP-G-001", "Place Name": "Great Canyon of Koraput", "Primary Type": "Gorge", "Secondary Type": "River Canyon", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Tentuligumma", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road + short walk", "River / Water Body": "Saberi River", "Height / Scale": "Massive gorge", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low\u2013Moderate", "Ideal For": "Photography"}, {"Place ID": "OD-MK-G-001", "Place Name": "Gumma Waterfall Gorge", "Primary Type": "Gorge", "Secondary Type": "Dangerous Pool Zone", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Mathili", "Trek Required": "Yes", "Trek Distance (km)": "Unknown", "Difficulty Level": "Difficult", "Access Type": "Jungle trek", "River / Water Body": "Hill stream", "Height / Scale": "Deep pools", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Cautious explorers"}, {"Place ID": "OD-KP-C-001", "Place Name": "Gupteswar Cave Temple", "Primary Type": "Cave Temple", "Secondary Type": "Limestone Cave", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Jeypore", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Forest road", "River / Water Body": "Saberi River", "Height / Scale": "Large cave", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Lord Shiva", "Temple / Shrine Name": "Gupteswar Mahadev", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "High", "Ideal For": "Pilgrims"}, {"Place ID": "OD-KP-C-002", "Place Name": "Gupteswar Upper Caves", "Primary Type": "Cave Network", "Secondary Type": "Limestone Extension", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Jeypore", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Saberi River", "Height / Scale": "Medium", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Lord Shiva", "Temple / Shrine Name": "Upper Gupteswar Shrines", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Explorers"}, {"Place ID": "AP-ASR-W-001", "Place Name": "Guruppa Bridge Gorge Falls", "Primary Type": "Waterfall", "Secondary Type": "Bridge Gorge", "District": "Alluri Sitarama Raju", "State": "Andhra Pradesh", "Nearest Town / Village": "Near Tarasu", "Trek Required": "Yes", "Trek Distance (km)": "Short", "Difficulty Level": "Moderate", "Access Type": "Bridge + walk", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Monsoon", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Jun\u2013Oct", "Crowd Level": "Low", "Ideal For": "Adventure photos"}, {"Place ID": "OD-RG-S-001", "Place Name": "Hatipathar Sacred Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Waterfall Cluster", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Rayagada outskirts", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Hill streams", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal deity", "Temple / Shrine Name": "Local shrines", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Medium", "Ideal For": "Local trips"}, {"Place ID": "OD-RG-S-002", "Place Name": "Hatipathar\u2013Kolab Basin", "Primary Type": "Sacred Landscape", "Secondary Type": "Seasonal Cascades", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Rayagada", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Kolab basin", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Explorers"}, {"Place ID": "CG-BS-D-001", "Place Name": "Indravati Dam", "Primary Type": "Dam", "Secondary Type": "Major Reservoir", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Jagdalpur", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road", "River / Water Body": "Indravati River", "Height / Scale": "Massive", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Landscape"}, {"Place ID": "CG-BS-R-002", "Place Name": "Indravati River Sacred Stretch", "Primary Type": "River", "Secondary Type": "Ritual Landscape", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Near Chitrakote", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Indravati River", "Height / Scale": "Wide river", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "River deity", "Temple / Shrine Name": "River shrines", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Cultural travel"}, {"Place ID": "CG-BS-S-004", "Place Name": "Indravati Upper Ritual Pools", "Primary Type": "Sacred Landscape", "Secondary Type": "River Pools", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Interior Bastar", "Trek Required": "Yes", "Trek Distance (km)": "Unknown", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Indravati tributary", "Height / Scale": "Pools", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal deity", "Temple / Shrine Name": "Natural altar", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Zero", "Ideal For": "Cultural research"}, {"Place ID": "OD-KP-T-001", "Place Name": "Jagannath Temple, Koraput", "Primary Type": "Temple", "Secondary Type": "Major Temple + Vaishnav Shrine", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Koraput Town", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road", "River / Water Body": "NA", "Height / Scale": "NA", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Lord Jagannath", "Temple / Shrine Name": "Jagannath Temple", "Best Time to Visit": "All year", "Crowd Level": "Medium", "Ideal For": "Families"}, {"Place ID": "OD-KP-D-003", "Place Name": "Jalaput Hydro Sacred Site", "Primary Type": "Dam / Hydro", "Secondary Type": "Old Hydro Project + Engineering Heritage", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Sunabeda", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road", "River / Water Body": "Kolab tributary", "Height / Scale": "Historic", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Educational visits"}, {"Place ID": "OD-RG-C-001", "Place Name": "Jimidipeta Cave Area", "Primary Type": "Cave", "Secondary Type": "Forest Cave", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Jimidipeta", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Hill seepage", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Local explorers"}, {"Place ID": "CG-BS-C-002", "Place Name": "Kailash Cave", "Primary Type": "Limestone Cave", "Secondary Type": "Wide Chamber Cave", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Kanger Valley", "Trek Required": "Yes", "Trek Distance (km)": "~1.5", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Underground stream", "Height / Scale": "Large", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Explorers"}, {"Place ID": "CG-BS-C-005", "Place Name": "Kailash Cave (Kanger)", "Primary Type": "Cave", "Secondary Type": "Limestone Cave", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Kanger NP", "Trek Required": "Yes", "Trek Distance (km)": "~2", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Cave seepage", "Height / Scale": "Large halls", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Partial", "Associated Deity": "Tribal lore", "Temple / Shrine Name": "Natural altar", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Explorers"}, {"Place ID": "OD-KD-S-002", "Place Name": "Kalinga Ghati Sacred Corridor", "Primary Type": "Sacred Landscape", "Secondary Type": "Hill Pass + Temple", "District": "Kandhamal", "State": "Odisha", "Nearest Town / Village": "G. Udayagiri", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Hill streams", "Height / Scale": "Corridor", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Thakurani", "Temple / Shrine Name": "Thakurani Temple", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Religious travel"}, {"Place ID": "CG-BS-D-002", "Place Name": "Kanger Valley Check Dams", "Primary Type": "Check Dams", "Secondary Type": "Forest Hydrology", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Kanger NP", "Trek Required": "Yes", "Trek Distance (km)": "Varies", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Kanger tributaries", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Very Low", "Ideal For": "Ecology"}, {"Place ID": "CG-BS-S-001", "Place Name": "Kanger Valley Sacred Forest", "Primary Type": "Sacred Landscape", "Secondary Type": "Tribal  + Ritual Forest Zone", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Kanger NP", "Trek Required": "Yes", "Trek Distance (km)": "Varies", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Kanger River", "Height / Scale": "Forested", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal spirits", "Temple / Shrine Name": "Natural shrines", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Very Low", "Ideal For": "Anthropology"}, {"Place ID": "CG-BS-C-004", "Place Name": "Kanger Valley Small Caves", "Primary Type": "Cave Cluster", "Secondary Type": "Minor Limestone Caves", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Kanger NP", "Trek Required": "Yes", "Trek Distance (km)": "Varies", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Subsurface", "Height / Scale": "Small\u2013Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Very Low", "Ideal For": "Nature study"}, {"Place ID": "OD-RG-S-005", "Place Name": "Kashipur Hill Ritual Pools", "Primary Type": "Sacred Landscape", "Secondary Type": "Natural Pools", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Kashipur interior", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Forest path", "River / Water Body": "Hill seepage", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal deity", "Temple / Shrine Name": "Stone altar", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Zero", "Ideal For": "Ethno-study"}, {"Place ID": "OD-MK-S-009", "Place Name": "Kerimiti Tribal Sacred Falls", "Primary Type": "Sacred Landscape", "Secondary Type": "Jungle Cascade", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Kerimiti", "Trek Required": "Yes", "Trek Distance (km)": "~2", "Difficulty Level": "Moderate", "Access Type": "Village + forest trek", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Cultural travel"}, {"Place ID": "OD-MK-C-001", "Place Name": "Khairput Minor Cave", "Primary Type": "Cave", "Secondary Type": "Rock Shelter", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Khairput interior", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Forest path", "River / Water Body": "Seepage", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Partial", "Associated Deity": "Tribal lore", "Temple / Shrine Name": "Natural altar", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Zero", "Ideal For": "Archaeology"}, {"Place ID": "OD-KP-D-001", "Place Name": "Kolab Dam", "Primary Type": "Dam", "Secondary Type": "Reservoir", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Jeypore", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road", "River / Water Body": "Kolab River", "Height / Scale": "Large", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Scenic drives"}, {"Place ID": "OD-KP-R-002", "Place Name": "Kolab River Backwater Zone", "Primary Type": "River Landscape", "Secondary Type": "Reservoir Backwaters", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Jeypore", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Kolab River", "Height / Scale": "Wide", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Sunset views"}, {"Place ID": "CG-BS-C-001", "Place Name": "Kotumsar Cave", "Primary Type": "Limestone Cave", "Secondary Type": "Underground Cave", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Jagdalpur", "Trek Required": "Yes (guided)", "Trek Distance (km)": "Inside cave", "Difficulty Level": "Moderate", "Access Type": "Managed entry", "River / Water Body": "Underground stream", "Height / Scale": "Very large", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Medium", "Ideal For": "Adventure"}, {"Place ID": "CG-BS-C-003", "Place Name": "Kotumsar Cave Inner Chambers", "Primary Type": "Cave", "Secondary Type": "Deep Limestone Cave", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Jagdalpur", "Trek Required": "Yes (guided)", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Managed entry", "River / Water Body": "Underground streams", "Height / Scale": "Extensive", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Adventure"}, {"Place ID": "OD-RG-C-002", "Place Name": "Kumbhariput Cave & Falls", "Primary Type": "Cave", "Secondary Type": "Cave + Cascade", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Kashipur", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Hill stream", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Offbeat travel"}, {"Place ID": "OD-MK-S-008", "Place Name": "Lower Bandakund Sacred Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Multi-tier Pools", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Kodabhata", "Trek Required": "Yes", "Trek Distance (km)": "5\u20137", "Difficulty Level": "Difficult", "Access Type": "Deep forest trek", "River / Water Body": "Hill stream", "Height / Scale": "25\u201340 ft", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal worship", "Temple / Shrine Name": "Natural pools", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Extremely Low", "Ideal For": "Advanced trekkers"}, {"Place ID": "OD-KP-D-004", "Place Name": "Machkund Hydro Project", "Primary Type": "Dam / Hydro", "Secondary Type": "Historic Project", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Machkund", "Trek Required": "Yes", "Trek Distance (km)": "Steps", "Difficulty Level": "Moderate", "Access Type": "Road + steps", "River / Water Body": "Machkund River", "Height / Scale": "Massive", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Medium", "Ideal For": "Engineering"}, {"Place ID": "OD-GP-C-001", "Place Name": "Mahendragiri Caves", "Primary Type": "Cave Cluster", "Secondary Type": "Mythological Caves", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Mahendragiri", "Trek Required": "Yes", "Trek Distance (km)": "~2", "Difficulty Level": "Moderate", "Access Type": "Hill trek", "River / Water Body": "Springs", "Height / Scale": "Medium", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Shiva / Parashurama", "Temple / Shrine Name": "Mahendragiri Shrines", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Pilgrims"}, {"Place ID": "OD-GP-S-004", "Place Name": "Mahendragiri Sacred Peak", "Primary Type": "Sacred Landscape", "Secondary Type": "Holy Mountain", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Mahendragiri", "Trek Required": "Yes", "Trek Distance (km)": "Long", "Difficulty Level": "Moderate", "Access Type": "Road + trek", "River / Water Body": "Springs", "Height / Scale": "Peak", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Shiva / Parashurama", "Temple / Shrine Name": "Multiple shrines", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Pilgrimage"}, {"Place ID": "OD-GP-S-001", "Place Name": "Mahendragiri Sacred Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Temple Cluster", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Mahendragiri", "Trek Required": "Yes", "Trek Distance (km)": "Varies", "Difficulty Level": "Moderate", "Access Type": "Road + trek", "River / Water Body": "Springs", "Height / Scale": "Mountain", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Shiva / Parashurama", "Temple / Shrine Name": "Multiple shrines", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Pilgrimage"}, {"Place ID": "OD-GP-S-005", "Place Name": "Mahendratanaya River Ritual Bend", "Primary Type": "Sacred Landscape", "Secondary Type": "River Worship", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Paralakhemundi outskirts", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Mahendratanaya", "Height / Scale": "River", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "River deity", "Temple / Shrine Name": "River shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Cultural visits"}, {"Place ID": "OD-MK-S-007", "Place Name": "Mahuliduduma Sacred Falls", "Primary Type": "Sacred Landscape", "Secondary Type": "Hidden Jungle Fall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Mahulput", "Trek Required": "Yes", "Trek Distance (km)": "~2", "Difficulty Level": "Difficult", "Access Type": "Jungle trek", "River / Water Body": "Hill stream", "Height / Scale": "Tall", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal spirits", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "True explorers"}, {"Place ID": "OD-NB-S-002", "Place Name": "Mangar Dhara Sacred Landscape", "Primary Type": "Sacred Landscape", "Secondary Type": "Waterfall + Cave", "District": "Nabarangpur", "State": "Odisha", "Nearest Town / Village": "Tentulikhunti", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Hill springs", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Lord Shiva", "Temple / Shrine Name": "Mangar Dhara Cave", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Spiritual + nature"}, {"Place ID": "OD-NB-C-001", "Place Name": "Mangar Dhara Shiva Cave", "Primary Type": "Cave Temple", "Secondary Type": "Sacred Cave", "District": "Nabarangpur", "State": "Odisha", "Nearest Town / Village": "Tentulikhunti", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Spring", "Height / Scale": "Small", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Lord Shiva", "Temple / Shrine Name": "Mangar Dhara Mahadev", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Spiritual"}, {"Place ID": "OD-GP-C-002", "Place Name": "Mohana Hill Cave Shelter", "Primary Type": "Cave", "Secondary Type": "Rock Cave", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Mohana interior", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Forest path", "River / Water Body": "Seepage", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Partial", "Associated Deity": "Tribal lore", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Zero", "Ideal For": "Field study"}, {"Place ID": "OD-MK-S-015", "Place Name": "Nakamamudi Hill Sacred Pools", "Primary Type": "Sacred Landscape", "Secondary Type": "Hill Pools", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Nakamamudi", "Trek Required": "Yes", "Trek Distance (km)": "~2", "Difficulty Level": "Moderate", "Access Type": "Forest path", "River / Water Body": "Hill seepage", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Stone altar", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Zero", "Ideal For": "Silent retreats"}, {"Place ID": "OD-MK-S-010", "Place Name": "Palkaguda Sacred Cascades", "Primary Type": "Sacred Landscape", "Secondary Type": "Layered Falls", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Gadiput", "Trek Required": "Yes", "Trek Distance (km)": "~10", "Difficulty Level": "Difficult", "Access Type": "Bike + steep trek", "River / Water Body": "Hill stream", "Height / Scale": "Layered", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal spirits", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Almost Zero", "Ideal For": "Hardcore adventure"}, {"Place ID": "OD-KD-S-003", "Place Name": "Phulbani Hilltop Ritual Spot", "Primary Type": "Sacred Landscape", "Secondary Type": "Hill Shrine", "District": "Kandhamal", "State": "Odisha", "Nearest Town / Village": "Phulbani interior", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Forest path", "River / Water Body": "Springs", "Height / Scale": "Hilltop", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Hill deity", "Temple / Shrine Name": "Stone shrine", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Very Low", "Ideal For": "Quiet worship"}, {"Place ID": "OD-MK-D-002", "Place Name": "Potteru Dam", "Primary Type": "Dam", "Secondary Type": "Regulator Dam", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Malkangiri", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road", "River / Water Body": "Potteru River", "Height / Scale": "Medium", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "All year", "Crowd Level": "Low", "Ideal For": "Infrastructure"}, {"Place ID": "OD-MK-G-002", "Place Name": "Potteru Gorge Stretch", "Primary Type": "Gorge", "Secondary Type": "River Gorge", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Potteru", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Potteru River", "Height / Scale": "Narrow gorge", "Perennial / Seasonal": "Perennial", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "All year", "Crowd Level": "Low", "Ideal For": "Scenic drives"}, {"Place ID": "OD-MK-S-013", "Place Name": "Potteru River Ritual Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "River Worship", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Potteru", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road", "River / Water Body": "Potteru River", "Height / Scale": "River stretch", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "River deity", "Temple / Shrine Name": "Village shrines", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Cultural study"}, {"Place ID": "OD-MK-S-011", "Place Name": "Pratapgiri Sacred Hill", "Primary Type": "Sacred Landscape", "Secondary Type": "Hill + Falls", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Mathili block", "Trek Required": "Yes", "Trek Distance (km)": "Unknown", "Difficulty Level": "Difficult", "Access Type": "Forest trek", "River / Water Body": "Springs", "Height / Scale": "Hill", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal deity", "Temple / Shrine Name": "Natural altar", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Extremely Low", "Ideal For": "Discovery seekers"}, {"Place ID": "OD-MK-S-006", "Place Name": "Raba Sacred Waterfall Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Island Pools", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Bayapoda", "Trek Required": "Yes", "Trek Distance (km)": "~3", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal worship", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Almost Zero", "Ideal For": "Dream photography"}, {"Place ID": "OD-KP-G-002", "Place Name": "Saberi River Gorge Falls", "Primary Type": "Gorge / Rapids", "Secondary Type": "River Rapids", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Machkund", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Viewpoint", "River / Water Body": "Saberi River", "Height / Scale": "Rapids", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Landscape"}, {"Place ID": "OD-KP-R-001", "Place Name": "Saberi River Sacred Ghats", "Primary Type": "Sacred River", "Secondary Type": "Ritual Ghats", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Machkund", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Viewpoint", "River / Water Body": "Saberi River", "Height / Scale": "Wide river", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Tribal + Shaivite", "Temple / Shrine Name": "Local shrines", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Cultural tourism"}, {"Place ID": "OD-KP-S-005", "Place Name": "Saberi\u2013Machkund Confluence", "Primary Type": "Sacred Landscape", "Secondary Type": "River Sangam", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Machkund", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road", "River / Water Body": "Saberi + Machkund", "Height / Scale": "Wide", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "River deity", "Temple / Shrine Name": "Open ghats", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Cultural tourism"}, {"Place ID": "OD-MK-S-004", "Place Name": "Sana Dural Sacred Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Dual-stream Falls", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Andrahal", "Trek Required": "Yes", "Trek Distance (km)": "2\u20136", "Difficulty Level": "Difficult", "Access Type": "Jungle trek + river crossing", "River / Water Body": "Hill streams", "Height / Scale": "~60 ft", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal spirits", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Feb\u2013Jun", "Crowd Level": "Almost Zero", "Ideal For": "Extreme offbeat"}, {"Place ID": "OD-MK-S-005", "Place Name": "Sarukund Sacred Pools", "Primary Type": "Sacred Landscape", "Secondary Type": "Natural Pools", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Khairput", "Trek Required": "Yes", "Trek Distance (km)": "2\u20134", "Difficulty Level": "Moderate", "Access Type": "Jungle + ghat trek", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "None", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Extremely Low", "Ideal For": "Silent retreats"}, {"Place ID": "OD-MK-R-001", "Place Name": "Sileru River Sacred Stretch", "Primary Type": "Sacred River", "Secondary Type": "Tribal Worship River", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Balimela", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road access", "River / Water Body": "Sileru River", "Height / Scale": "Wide", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Tribal river deity", "Temple / Shrine Name": "Local shrines", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Cultural study"}, {"Place ID": "OD-GP-S-003", "Place Name": "Sindising Sacred Forest", "Primary Type": "Sacred Landscape", "Secondary Type": "Forest Shrine", "District": "Gajapati", "State": "Odisha", "Nearest Town / Village": "Rayagada block", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Hill stream", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Forest shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Nature worship"}, {"Place ID": "OD-KL-S-002", "Place Name": "Sospadar Sacred Falls", "Primary Type": "Sacred Landscape", "Secondary Type": "Forest Waterfall", "District": "Kalahandi", "State": "Odisha", "Nearest Town / Village": "Bhawanipatna", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest road", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Weekend trips"}, {"Place ID": "OD-KD-S-001", "Place Name": "Sukedi Sacred Hills", "Primary Type": "Sacred Landscape", "Secondary Type": "Hill Waterfall", "District": "Kandhamal", "State": "Odisha", "Nearest Town / Village": "G. Udayagiri", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest road", "River / Water Body": "Hill stream", "Height / Scale": "~40 ft", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Hill deity", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Nature walks"}, {"Place ID": "OD-RG-S-003", "Place Name": "Surjyagad Sacred Cascade", "Primary Type": "Sacred Landscape", "Secondary Type": "Forest Waterfall", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Kashipur", "Trek Required": "Unknown", "Trek Distance (km)": "NA", "Difficulty Level": "Moderate", "Access Type": "Forest access", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal deity", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Quiet escapes"}, {"Place ID": "OD-RG-S-004", "Place Name": "Talabadi Village Sacred Falls", "Primary Type": "Sacred Landscape", "Secondary Type": "Village Waterfall", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Taralabadi", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Village road", "River / Water Body": "Local stream", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Village deity", "Temple / Shrine Name": "Village shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Low", "Ideal For": "Easy trips"}, {"Place ID": "OD-KP-S-002", "Place Name": "Talamiting Sacred Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Cascade + Pools", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Kakriguma", "Trek Required": "No", "Trek Distance (km)": "~1.5", "Difficulty Level": "Easy", "Access Type": "Road + walk", "River / Water Body": "Hill stream", "Height / Scale": "~100 ft", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low\u2013Medium", "Ideal For": "Families"}, {"Place ID": "OD-MK-S-012", "Place Name": "Tarabu Border Sacred Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Gorge + Falls", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "OD\u2013AP border", "Trek Required": "Yes", "Trek Distance (km)": "5\u20136", "Difficulty Level": "Difficult", "Access Type": "Border forest trek", "River / Water Body": "Hill stream", "Height / Scale": "Deep gorge", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal worship", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Jun\u2013Oct", "Crowd Level": "Low", "Ideal For": "Border explorers"}, {"Place ID": "AP-VZG-W-001", "Place Name": "Tarasu Sacred Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Gorge Fall", "District": "Vizianagaram", "State": "Andhra Pradesh", "Nearest Town / Village": "Guntuvada", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Forest trek", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Monsoon", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Village shrine", "Best Time to Visit": "Jun\u2013Oct", "Crowd Level": "Low\u2013Moderate", "Ideal For": "Monsoon trips"}, {"Place ID": "OD-KP-S-006", "Place Name": "Tentuligumma Hill Shrine Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Hill Shrine", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Tentuligumma", "Trek Required": "Yes", "Trek Distance (km)": "~1", "Difficulty Level": "Moderate", "Access Type": "Hill path", "River / Water Body": "Springs", "Height / Scale": "Hill", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Hill shrine", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Very Low", "Ideal For": "Sunset views"}, {"Place ID": "OD-KD-T-001", "Place Name": "Thakurani Temple (Kalinga Ghati)", "Primary Type": "Temple", "Secondary Type": "Hill Deity Shrine", "District": "Kandhamal", "State": "Odisha", "Nearest Town / Village": "G. Udayagiri", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Hill spring", "Height / Scale": "NA", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Thakurani", "Temple / Shrine Name": "Thakurani Temple", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Medium", "Ideal For": "Religious tourism"}, {"Place ID": "OD-KP-S-003", "Place Name": "Thuria Konda Sacred Peak", "Primary Type": "Sacred Landscape", "Secondary Type": "Hill + Falls", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Potangi", "Trek Required": "Yes", "Trek Distance (km)": "Short", "Difficulty Level": "Moderate", "Access Type": "Hill trek", "River / Water Body": "Seasonal streams", "Height / Scale": "Peak", "Perennial / Seasonal": "Monsoon", "Sacred Importance": "Yes", "Associated Deity": "Hill deity", "Temple / Shrine Name": "Hill shrine", "Best Time to Visit": "Jul\u2013Sep", "Crowd Level": "Low", "Ideal For": "Monsoon trekkers"}, {"Place ID": "CG-BS-G-001", "Place Name": "Tirathgarh Gorge Viewpoint", "Primary Type": "Gorge", "Secondary Type": "Stepped Canyon", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Jagdalpur", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Managed steps", "River / Water Body": "Kanger River", "Height / Scale": "Multi-tier", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Moderate", "Ideal For": "Sightseeing"}, {"Place ID": "CG-BS-S-003", "Place Name": "Tirathgarh Lower Ritual Zone", "Primary Type": "Sacred Landscape", "Secondary Type": "Cascades + Shrines", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Jagdalpur", "Trek Required": "Yes", "Trek Distance (km)": "Short", "Difficulty Level": "Moderate", "Access Type": "Steps + forest", "River / Water Body": "Indravati tributary", "Height / Scale": "Multi-tier", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Lower shrines", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Low", "Ideal For": "Quiet nature"}, {"Place ID": "OD-MK-S-003", "Place Name": "Tribal Interior Sacred Streams", "Primary Type": "Sacred Landscape", "Secondary Type": "Tribal Worship Zone", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Interior villages", "Trek Required": "Yes", "Trek Distance (km)": "Varies", "Difficulty Level": "Difficult", "Access Type": "Jungle trek", "River / Water Body": "Multiple streams", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal spirits", "Temple / Shrine Name": "Natural shrines", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Very Low", "Ideal For": "Ethnography"}, {"Place ID": "OD-NB-W-010", "Place Name": "Undocumented Ambapani Falls", "Primary Type": "Waterfall", "Secondary Type": "Forest Cascade", "District": "Nabarangpur", "State": "Odisha", "Nearest Town / Village": "Ambapani Sanctuary", "Trek Required": "Yes", "Trek Distance (km)": "~2", "Difficulty Level": "Moderate", "Access Type": "Forest trail", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Zero", "Ideal For": "Wildlife teams"}, {"Place ID": "CG-BS-W-010", "Place Name": "Undocumented Bastar Jungle Falls", "Primary Type": "Waterfall", "Secondary Type": "Deep Forest Fall", "District": "Bastar", "State": "Chhattisgarh", "Nearest Town / Village": "Interior Bastar", "Trek Required": "Yes", "Trek Distance (km)": "Unknown", "Difficulty Level": "Difficult", "Access Type": "Jungle trek", "River / Water Body": "Hill stream", "Height / Scale": "Tall", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Zero", "Ideal For": "Exploration"}, {"Place ID": "OD-RG-W-015", "Place Name": "Undocumented Kashipur Falls", "Primary Type": "Waterfall", "Secondary Type": "Forest Fall", "District": "Rayagada", "State": "Odisha", "Nearest Town / Village": "Kashipur interior", "Trek Required": "Yes", "Trek Distance (km)": "Unknown", "Difficulty Level": "Moderate", "Access Type": "Jungle trek", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Zero", "Ideal For": "Explorers"}, {"Place ID": "OD-KP-W-018", "Place Name": "Undocumented Kolab Tributary Falls", "Primary Type": "Waterfall", "Secondary Type": "Seasonal Cascade", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Kolab interior", "Trek Required": "Yes", "Trek Distance (km)": "Varies", "Difficulty Level": "Moderate", "Access Type": "Forest track", "River / Water Body": "Kolab tributary", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Jul\u2013Oct", "Crowd Level": "Zero", "Ideal For": "Mapping"}, {"Place ID": "OD-MK-W-020", "Place Name": "Undocumented Tulasi Range Falls", "Primary Type": "Waterfall", "Secondary Type": "Jungle Cascade", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Tulasi Range", "Trek Required": "Yes", "Trek Distance (km)": "Varies", "Difficulty Level": "Difficult", "Access Type": "Forest trek", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Zero", "Ideal For": "Survey teams"}, {"Place ID": "OD-MK-S-014", "Place Name": "Unnamed Khairput Tribal Falls", "Primary Type": "Sacred Landscape", "Secondary Type": "Hidden Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Khairput interior", "Trek Required": "Yes", "Trek Distance (km)": "Unknown", "Difficulty Level": "Difficult", "Access Type": "Jungle trek", "River / Water Body": "Hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal spirits", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct\u2013Jun", "Crowd Level": "Zero", "Ideal For": "Ethno-research"}, {"Place ID": "OD-KP-D-002", "Place Name": "Upper Kolab Sacred Reservoir Zone", "Primary Type": "Dam", "Secondary Type": "Hydro Project + Reservoir + Shrines", "District": "Koraput", "State": "Odisha", "Nearest Town / Village": "Koraput", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Road access", "River / Water Body": "Kolab River", "Height / Scale": "Large reservoir", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Partial", "Associated Deity": "Local deities", "Temple / Shrine Name": "Hill shrines", "Best Time to Visit": "Oct\u2013Mar", "Crowd Level": "Low", "Ideal For": "Scenic drives"}], "Place Name": "Alurkota Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Jungle Waterfall", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Alurkota village", "Trek Required": "Yes", "Trek Distance (km)": "NA", "Difficulty Level": "Extreme", "Access Type": "Hardcore jungle trek", "River / Water Body": "Local hill stream", "Height / Scale": "Very tall", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "No", "Associated Deity": "NA", "Temple / Shrine Name": "NA", "Best Time to Visit": "Oct–Jun", "Crowd Level": "Almost Zero", "Ideal For": "Adventure vloggers"}, {"Place ID": "OD-MK-S-001", "Place Name": "Ammakund Sacred Kund", "Primary Type": "Sacred Waterbody", "Secondary Type": "Fish-Protected Pool", "District": "Malkangiri", "State": "Odisha", "Nearest Town / Village": "Khoirput", "Trek Required": "Yes", "Trek Distance (km)": "~0.5", "Difficulty Level": "Easy", "Access Type": "Forest path", "River / Water Body": "Natural spring", "Height / Scale": "Deep pool", "Perennial / Seasonal": "Perennial", "Sacred Importance": "Yes", "Associated Deity": "Ramayana link", "Temple / Shrine Name": "Ammakunda", "Best Time to Visit": "Oct–Mar", "Crowd Level": "Low", "Ideal For": "Spiritual + nature"}, {"Place ID": "OD-KD-W-001", "Place Name": "Andharakoti Waterfall", "Primary Type": "Waterfall", "Secondary Type": "Roadside Waterfall", "District": "Kandhamal", "State": "Odisha", "Nearest Town / Village": "G. Udayagiri", "Trek Required": "No", "Trek Distance (km)": 0, "Difficulty Level": "Easy", "Access Type": "Roadside", "River / Water Body": "Rajagada hill stream", "Height / Scale": "Medium", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Local deity", "Temple / Shrine Name": "Thakurani Temple", "Best Time to Visit": "Oct–Mar", "Crowd Level": "Low", "Ideal For": "Temple + nature"}, {"Place ID": "AP-ASR-S-001", "Place Name": "Araku Tribal Sacred Stream", "Primary Type": "Sacred Landscape", "Secondary Type": "Stream Worship", "District": "Alluri Sitarama Raju", "State": "Andhra Pradesh", "Nearest Town / Village": "Araku interior", "Trek Required": "Yes", "Trek Distance (km)": "Short", "Difficulty Level": "Moderate", "Access Type": "Forest path", "River / Water Body": "Hill stream", "Height / Scale": "Small", "Perennial / Seasonal": "Seasonal", "Sacred Importance": "Yes", "Associated Deity": "Tribal spirits", "Temple / Shrine Name": "Natural shrine", "Best Time to Visit": "Oct–Mar", "Crowd Level": "Very Low", "Ideal For": "Ethno-tourism"}]
+        };
+
+        // Load data
+        function loadData() {
+            try {
+                const data = PLACES_DATA;
+                allPlaces = data.places;
+                
+                initializeFilters();
+                displayPlaces(allPlaces);
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('placesContainer').innerHTML = '<div class="loader">Error loading places. Please refresh.</div>';
+            }
+        }
+
+        // Initialize filters
+        function initializeFilters() {
+            const types = [...new Set(allPlaces.map(p => p['Primary Type']))].sort();
+            const districts = [...new Set(allPlaces.map(p => p['District']))].sort();
+            const difficulties = ['Easy', 'Moderate', 'Difficult', 'Extreme'];
+
+            const typeSelect = document.getElementById('typeFilter');
+            const districtSelect = document.getElementById('districtFilter');
+            const difficultySelect = document.getElementById('difficultyFilter');
+
+            types.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = type;
+                typeSelect.appendChild(option);
+            });
+
+            districts.forEach(district => {
+                const option = document.createElement('option');
+                option.value = district;
+                option.textContent = district;
+                districtSelect.appendChild(option);
+            });
+
+            difficulties.forEach(diff => {
+                const option = document.createElement('option');
+                option.value = diff;
+                option.textContent = diff;
+                difficultySelect.appendChild(option);
+            });
+
+            typeSelect.addEventListener('change', applyFilters);
+            districtSelect.addEventListener('change', applyFilters);
+            difficultySelect.addEventListener('change', applyFilters);
+            document.getElementById('sacredFilter').addEventListener('change', applyFilters);
+            document.getElementById('searchInput').addEventListener('input', applyFilters);
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const typeFilter = document.getElementById('typeFilter').value;
+            const districtFilter = document.getElementById('districtFilter').value;
+            const difficultyFilter = document.getElementById('difficultyFilter').value;
+            const sacredFilter = document.getElementById('sacredFilter').value;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            filteredPlaces = allPlaces.filter(place => {
+                const matchType = !typeFilter || place['Primary Type'] === typeFilter;
+                const matchDistrict = !districtFilter || place['District'] === districtFilter;
+                const matchDifficulty = !difficultyFilter || place['Difficulty Level'] === difficultyFilter;
+                const matchSacred = !sacredFilter || place['Sacred Importance'] === sacredFilter;
+                const matchSearch = !searchTerm || 
+                    place['Place Name'].toLowerCase().includes(searchTerm) ||
+                    place['District'].toLowerCase().includes(searchTerm);
+
+                return matchType && matchDistrict && matchDifficulty && matchSacred && matchSearch;
+            });
+
+            displayPlaces(filteredPlaces);
+        }
+
+        // Display places
+        function displayPlaces(places) {
+            const container = document.getElementById('placesContainer');
+            const resultCount = document.getElementById('resultCount');
+
+            if (places.length === 0) {
+                container.innerHTML = '<div class="empty-state"><h3>No places found</h3><p>Try adjusting your filters</p></div>';
+                resultCount.textContent = 'No results';
+                return;
+            }
+
+            resultCount.textContent = `Showing ${places.length} of ${allPlaces.length} places`;
+
+            container.innerHTML = places.map(place => {
+                const icon = getTypeIcon(place['Primary Type']);
+                return `
+                    <div class="place-card" onclick="openModal('${place['Place ID']}')">
+                        <div class="place-image">
+                            ${icon}
+                            <div class="place-type-badge">${place['Primary Type']}</div>
+                        </div>
+                        <div class="place-content">
+                            <div class="place-location">📍 ${place['District']}</div>
+                            <h3 class="place-title">${place['Place Name']}</h3>
+                            <div class="place-details">
+                                <div class="detail-badge ${place['Sacred Importance'] === 'Yes' ? 'highlight' : ''}">
+                                    ${place['Sacred Importance'] === 'Yes' ? '✨ Sacred' : 'Nature'}
+                                </div>
+                                <div class="detail-badge">${place['Difficulty Level']}</div>
+                                <div class="detail-badge">${place['Crowd Level']}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Get icon
+        function getTypeIcon(type) {
+            const icons = {
+                'Waterfall': '💧',
+                'Sacred Landscape': '🌳',
+                'Cave Temple': '⛰️',
+                'Cave': '⛰️',
+                'Limestone Cave': '⛰️',
+                'Temple': '🏛️',
+                'Dam': '🏗️',
+                'River': '🌊',
+                'Sacred River': '🌊',
+                'Gorge': '🗻',
+                'Sacred Waterbody': '💧'
+            };
+            return icons[type] || '📍';
+        }
+
+        // Open modal
+        function openModal(placeId) {
+            const place = allPlaces.find(p => p['Place ID'] === placeId);
+            if (!place) return;
+
+            const modalBody = document.getElementById('modalBody');
+
+            modalBody.innerHTML = `
+                <h2>${place['Place Name']}</h2>
+                <div class="modal-location">📍 ${place['Nearest Town / Village']}, ${place['District']}, ${place['State']}</div>
+                
+                <div class="modal-grid">
+                    <div class="modal-section">
+                        <h3>Classification</h3>
+                        <p><strong>Type:</strong> <span class="modal-value">${place['Primary Type']}</span></p>
+                        <p><strong>Secondary:</strong> <span class="modal-value">${place['Secondary Type']}</span></p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Accessibility</h3>
+                        <p><strong>Trek:</strong> <span class="modal-value">${place['Trek Required']}</span></p>
+                        <p><strong>Difficulty:</strong> <span class="modal-value">${place['Difficulty Level']}</span></p>
+                        <p><strong>Crowd:</strong> <span class="modal-value">${place['Crowd Level']}</span></p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Geography</h3>
+                        <p><strong>Water Body:</strong> <span class="modal-value">${place['River / Water Body']}</span></p>
+                        <p><strong>Height/Scale:</strong> <span class="modal-value">${place['Height / Scale']}</span></p>
+                        <p><strong>Nature:</strong> <span class="modal-value">${place['Perennial / Seasonal']}</span></p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>Best Time to Visit</h3>
+                        <p><span class="modal-value" style="font-size: 1.2rem;">${place['Best Time to Visit']}</span></p>
+                        <p style="margin-top: 1rem;">Ideal For: <span class="modal-value">${place['Ideal For']}</span></p>
+                    </div>
+                    ${place['Sacred Importance'] === 'Yes' ? `
+                    <div class="modal-section">
+                        <h3>Sacred Information</h3>
+                        <p><strong>Sacred:</strong> <span class="modal-value">Yes</span></p>
+                        <p><strong>Deity:</strong> <span class="modal-value">${place['Associated Deity']}</span></p>
+                        <p><strong>Temple/Shrine:</strong> <span class="modal-value">${place['Temple / Shrine Name']}</span></p>
+                    </div>
+                    ` : ''}
+                </div>
+            `;
+
+            document.getElementById('placeModal').classList.add('active');
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('placeModal').classList.remove('active');
+        }
+
+        document.getElementById('placeModal').addEventListener('click', (e) => {
+            if (e.target.id === 'placeModal') closeModal();
+        });
+
+        // Load on start
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+</html>

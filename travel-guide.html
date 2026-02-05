@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide - Eastern India's Hidden Gems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e0f;
+            --bg-secondary: #111619;
+            --text-primary: #ffffff;
+            --text-secondary: #b4bcc4;
+            --accent-gold: #d4a574;
+            --accent-orange: #e8915d;
+            --border-color: #2a3036;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 15, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo-link img {
+            height: 35px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-gold);
+        }
+
+        .page-hero {
+            margin-top: 60px;
+            height: 50vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%),
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .content-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .guide-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.1);
+        }
+
+        .guide-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .guide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+
+        .guide-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="dynamic-site.html" class="logo-link">
+                <img src="https://res.cloudinary.com/dddj9k6xk/image/upload/v1770192830/Logo_ytbhl7.png" alt="EIHG Logo">
+                <span class="logo-text">EIHG</span>
+            </a>
+            <nav class="nav-links">
+                <a href="dynamic-site.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="experiences.html">Experiences</a>
+                <a href="travel-guide.html">Travel Guide</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Your Complete <span>Travel Guide</span></h1>
+        <p>Everything You Need to Know Before You Go</p>
+    </section>
+
+    <section class="content-section">
+        <div class="section-header">
+            <h2>Travel Planning Essentials</h2>
+        </div>
+
+        <div class="guides-grid">
+            <div class="guide-card">
+                <div class="guide-icon">🗓️</div>
+                <h3 class="guide-title">Best Time to Visit</h3>
+                <p class="guide-text">October to March is ideal. Avoid monsoons unless specifically visiting waterfalls. Summer (April-June) is hot but offers fewer crowds.</p>
+            </div>
+
+            <div class="guide-card">
+                <div class="guide-icon">🚗</div>
+                <h3 class="guide-title">Getting Around</h3>
+                <p class="guide-text">Rent a car or hire a local guide. Public transport is available but limited. Many sites require 4WD vehicles during monsoon season.</p>
+            </div>
+
+            <div class="guide-card">
+                <div class="guide-icon">🏨</div>
+                <h3 class="guide-title">Accommodation</h3>
+                <p class="guide-text">Stay in nearby towns like Koraput, Jeypore, or Jagdalpur. Book in advance, especially during peak season (Oct-Jan).</p>
+            </div>
+
+            <div class="guide-card">
+                <div class="guide-icon">🥾</div>
+                <h3 class="guide-title">What to Pack</h3>
+                <p class="guide-text">Trekking shoes, water bottle, sun protection, light rain jacket, and insect repellent. Carry a good camera for photography.</p>
+            </div>
+
+            <div class="guide-card">
+                <div class="guide-icon">💪</div>
+                <h3 class="guide-title">Physical Preparation</h3>
+                <p class="guide-text">Some trails are challenging. Maintain good fitness. Acclimatize to altitude if visiting hilly regions. Carry medical supplies.</p>
+            </div>
+
+            <div class="guide-card">
+                <div class="guide-icon">📱</div>
+                <h3 class="guide-title">Important Tips</h3>
+                <p class="guide-text">Download offline maps. Carry cash (ATMs are rare). Respect local customs. Hire local guides for safety and authentic experiences.</p>
+            </div>
+
+            <div class="guide-card">
+                <div class="guide-icon">🍲</div>
+                <h3 class="guide-title">Food & Water</h3>
+                <p class="guide-text">Try local cuisine at dhabas. Carry purified water bottles. Street food is generally safe but use caution. Vegetarian options are plenty.</p>
+            </div>
+
+            <div class="guide-card">
+                <div class="guide-icon">⚠️</div>
+                <h3 class="guide-title">Safety Guidelines</h3>
+                <p class="guide-text">Never trek alone. Inform someone of your itinerary. Keep emergency contacts. Avoid traveling at night. Wildlife exists - respect boundaries.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="color: var(--text-secondary);">"Preserving stories of nature, faith, and silence."</p>
+        <a href="dynamic-site.html" class="back-link">← Back to Home</a>
+        <div style="color: var(--text-secondary); margin-top: 2rem; font-size: 0.9rem;">
+            &copy; 2024 Eastern India's Hidden Gems. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

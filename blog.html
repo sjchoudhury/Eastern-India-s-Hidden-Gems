@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Eastern India's Hidden Gems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e0f;
+            --bg-secondary: #111619;
+            --text-primary: #ffffff;
+            --text-secondary: #b4bcc4;
+            --accent-gold: #d4a574;
+            --accent-orange: #e8915d;
+            --border-color: #2a3036;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 15, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-link img {
+            height: 35px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-gold);
+        }
+
+        .page-hero {
+            margin-top: 60px;
+            height: 50vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%),
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .content-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .blog-post {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+        }
+
+        .blog-post:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.1);
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .post-category {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .post-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .post-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: var(--text-primary);
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .post-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="dynamic-site.html" class="logo-link">
+                <img src="https://res.cloudinary.com/dddj9k6xk/image/upload/v1770192830/Logo_ytbhl7.png" alt="EIHG Logo">
+                <span class="logo-text">EIHG</span>
+            </a>
+            <nav class="nav-links">
+                <a href="dynamic-site.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="experiences.html">Experiences</a>
+                <a href="travel-guide.html">Travel Guide</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Our <span>Blog</span></h1>
+        <p>Stories, Tips, and Inspiration from Eastern India</p>
+    </section>
+
+    <section class="content-section">
+        <div class="section-header">
+            <h2>Latest Posts</h2>
+        </div>
+
+        <div class="blog-posts">
+            <article class="blog-post">
+                <div class="post-meta">
+                    <span class="post-category">TRAVEL TIPS</span>
+                    <span>February 4, 2024</span>
+                </div>
+                <h2 class="post-title">Hidden Waterfalls: A Complete Guide to Eastern India's Best Cascades</h2>
+                <p class="post-excerpt">Discover the most stunning waterfalls in Eastern India. From Duduma Falls' majestic 170m drop to hidden jungle cascades, we've compiled the ultimate guide to planning your waterfall adventure...</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+
+            <article class="blog-post">
+                <div class="post-meta">
+                    <span class="post-category">CULTURE</span>
+                    <span>January 28, 2024</span>
+                </div>
+                <h2 class="post-title">Sacred Journeys: Exploring the Spiritual Heart of Eastern India</h2>
+                <p class="post-excerpt">Experience the profound spirituality of Eastern India's sacred sites. Learn about ancient temples, tribal rituals, and the deep connection between nature and spirituality in these sacred landscapes...</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+
+            <article class="blog-post">
+                <div class="post-meta">
+                    <span class="post-category">ADVENTURE</span>
+                    <span>January 15, 2024</span>
+                </div>
+                <h2 class="post-title">Jungle Trekking: Navigating the Dense Forests of Malkangiri</h2>
+                <p class="post-excerpt">Venture into the heart of tribal territory with our comprehensive guide to trekking in Malkangiri. Discover rare plants, wildlife encounters, and the untouched beauty of Eastern India's wilderness...</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+
+            <article class="blog-post">
+                <div class="post-meta">
+                    <span class="post-category">PHOTOGRAPHY</span>
+                    <span>December 30, 2023</span>
+                </div>
+                <h2 class="post-title">Capturing Magic: Photography Tips for Eastern India's Most Scenic Spots</h2>
+                <p class="post-excerpt">Learn professional photography techniques to capture the breathtaking beauty of Eastern India. From golden hour lighting at waterfalls to cave photography tips, master the art of nature photography...</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <p style="color: var(--text-secondary);">"Preserving stories of nature, faith, and silence."</p>
+        <a href="dynamic-site.html" class="back-link">← Back to Home</a>
+        <div style="color: var(--text-secondary); margin-top: 2rem; font-size: 0.9rem;">
+            &copy; 2024 Eastern India's Hidden Gems. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

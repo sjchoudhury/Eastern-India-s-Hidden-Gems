@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Eastern India's Hidden Gems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e0f;
+            --bg-secondary: #111619;
+            --text-primary: #ffffff;
+            --text-secondary: #b4bcc4;
+            --accent-gold: #d4a574;
+            --accent-orange: #e8915d;
+            --border-color: #2a3036;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HEADER/NAV */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 15, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo-link img {
+            height: 35px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-gold);
+        }
+
+        /* HERO SECTION */
+        .page-hero {
+            margin-top: 60px;
+            height: 50vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%),
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .page-hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* CONTENT SECTION */
+        .content-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-header p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* DESTINATIONS GRID */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .destination-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .destination-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.1);
+        }
+
+        .destination-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .destination-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(232, 145, 93, 0.9);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .destination-content {
+            padding: 2rem;
+        }
+
+        .destination-location {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .destination-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .destination-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .destination-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .detail-tag {
+            background: rgba(212, 165, 116, 0.1);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .detail-tag.highlight {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="dynamic-site.html" class="logo-link">
+                <img src="https://res.cloudinary.com/dddj9k6xk/image/upload/v1770192830/Logo_ytbhl7.png" alt="EIHG Logo">
+                <span class="logo-text">EIHG</span>
+            </a>
+            <nav class="nav-links">
+                <a href="dynamic-site.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="experiences.html">Experiences</a>
+                <a href="travel-guide.html">Travel Guide</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <h1>Explore Our <span>Destinations</span></h1>
+        <p>Discover 126 Sacred & Natural Wonders of Eastern India</p>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2>Featured Destinations</h2>
+            <p>From majestic waterfalls to sacred temples, explore the most enchanting places in Eastern India</p>
+        </div>
+
+        <div class="destinations-grid" id="destinationsGrid">
+            <!-- Destinations will be loaded here -->
+            <div style="text-align: center; color: var(--text-secondary); padding: 2rem;">Loading destinations...</div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">"Preserving stories of nature, faith, and silence."</p>
+            <a href="dynamic-site.html" class="back-link">← Back to Home</a>
+            <div class="footer-text" style="margin-top: 2rem;">
+                &copy; 2024 Eastern India's Hidden Gems. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample destinations data
+        const destinations = [
+            {
+                id: 'OD-MK-W-001',
+                name: 'Alurkota Waterfall',
+                type: 'Waterfall',
+                location: 'Malkangiri, Odisha',
+                icon: '💧',
+                description: 'A majestic jungle waterfall with pristine natural beauty. Perfect for adventure vloggers and nature enthusiasts.',
+                difficulty: 'Extreme',
+                crowd: 'Almost Zero',
+                sacred: false
+            },
+            {
+                id: 'OD-MK-S-001',
+                name: 'Ammakund Sacred Kund',
+                type: 'Sacred Waterbody',
+                location: 'Malkangiri, Odisha',
+                icon: '🏛️',
+                description: 'A sacred pool with deep spiritual significance. Legend has it to have connections to the Ramayana.',
+                difficulty: 'Easy',
+                crowd: 'Low',
+                sacred: true
+            },
+            {
+                id: 'OD-KD-W-001',
+                name: 'Andharakoti Waterfall',
+                type: 'Waterfall',
+                location: 'Kandhamal, Odisha',
+                icon: '💧',
+                description: 'A beautiful roadside waterfall with a nearby temple. Great for a quick visit.',
+                difficulty: 'Easy',
+                crowd: 'Low',
+                sacred: true
+            },
+            {
+                id: 'OD-KP-W-005',
+                name: 'Duduma Waterfall',
+                type: 'Waterfall',
+                location: 'Koraput, Odisha',
+                icon: '💧',
+                description: 'One of the tallest waterfalls in the region with sacred significance to local communities.',
+                difficulty: 'Moderate',
+                crowd: 'Medium',
+                sacred: true
+            },
+            {
+                id: 'CG-BS-W-001',
+                name: 'Chitrakote Waterfall',
+                type: 'Waterfall',
+                location: 'Bastar, Chhattisgarh',
+                icon: '💧',
+                description: 'The Indian Niagara! A stunning wide waterfall perfect for all travelers.',
+                difficulty: 'Easy',
+                crowd: 'High',
+                sacred: true
+            },
+            {
+                id: 'OD-GP-T-001',
+                name: 'Brahmani Devi Temple',
+                type: 'Temple',
+                location: 'Gajapati, Odisha',
+                icon: '🏛️',
+                description: 'An ancient hilltop shrine dedicated to the Goddess Brahmani with breathtaking views.',
+                difficulty: 'Easy',
+                crowd: 'Low',
+                sacred: true
+            },
+            {
+                id: 'OD-KP-C-001',
+                name: 'Gupteswar Cave Temple',
+                type: 'Cave Temple',
+                location: 'Koraput, Odisha',
+                icon: '⛰️',
+                description: 'A sacred limestone cave temple dedicated to Lord Shiva with mystical ambiance.',
+                difficulty: 'Easy',
+                crowd: 'High',
+                sacred: true
+            },
+            {
+                id: 'CG-BS-C-001',
+                name: 'Kotumsar Cave',
+                type: 'Cave',
+                location: 'Bastar, Chhattisgarh',
+                icon: '⛰️',
+                description: 'An underground limestone cave with underground streams and stalactites.',
+                difficulty: 'Moderate',
+                crowd: 'Medium',
+                sacred: false
+            }
+        ];
+
+        // Render destinations
+        function renderDestinations() {
+            const grid = document.getElementById('destinationsGrid');
+            grid.innerHTML = destinations.map(dest => `
+                <div class="destination-card">
+                    <div class="destination-image">
+                        ${dest.icon}
+                        <div class="destination-badge">${dest.type}</div>
+                    </div>
+                    <div class="destination-content">
+                        <div class="destination-location">📍 ${dest.location}</div>
+                        <h3 class="destination-title">${dest.name}</h3>
+                        <p class="destination-description">${dest.description}</p>
+                        <div class="destination-details">
+                            <div class="detail-tag ${dest.sacred ? 'highlight' : ''}">
+                                ${dest.sacred ? '✨ Sacred' : 'Nature'}
+                            </div>
+                            <div class="detail-tag">${dest.difficulty}</div>
+                            <div class="detail-tag">${dest.crowd}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Load on page start
+        document.addEventListener('DOMContentLoaded', renderDestinations);
+    </script>
+
+</body>
+</html>
