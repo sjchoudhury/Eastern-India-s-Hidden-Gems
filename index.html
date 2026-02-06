@@ -251,24 +251,6 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .hero-nav-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.8rem;
-                position: relative;
-                margin-top: 1.5rem;
-                background: none;
-                padding: 0;
-            }
-        
-            .hero-nav-links a {
-                font-size: 0.7rem;
-                letter-spacing: 0.08em;
-             }
-        }
-
         .hero-button {
             padding: 1rem 2.5rem;
             background: transparent;
@@ -628,6 +610,55 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ================= MOBILE HAMBURGER MENU ================= */
+        
+        .hamburger {
+            display: none;
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1100;
+            color: var(--accent-gold);
+        }
+
+        .mobile-menu {
+           display: none;
+           position: fixed;
+           inset: 0;
+           background: rgba(10, 14, 15, 0.97);
+           z-index: 1000;
+           padding-top: 6rem;
+           text-align: center;
+        }
+
+        .mobile-menu a {
+           display: block;
+           padding: 1rem 0;
+           font-size: 1.1rem;
+           text-decoration: none;
+           color: var(--text-primary);
+           letter-spacing: 0.12em;
+           text-transform: uppercase;
+        }
+
+        .mobile-menu a:hover {
+           color: var(--accent-gold);
+        }
+
+        /* Mobile-only behavior */
+        @media (max-width: 768px) {
+            .hero-nav-links {
+                display: none;
+        }
+
+        .hamburger {
+            display: block;
+        }
+    }        
+
     </style>
 </head>
 <body>
@@ -636,11 +667,37 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-logo">
-                <img src="https://res.cloudinary.com/dddj9k6xk/image/upload/v1770192830/Logo_ytbhl7.png" alt="EIHG Logo" style="width: 35%; height: 35%; object-fit: contain;">
+                <img src="https://res.cloudinary.com/dddj9k6xk/image/upload/v1770192830/Logo_ytbhl7.png"
+                     alt="EIHG Logo"
+                     style="width: 35%; height: 35%; object-fit: contain;">
             </div>
+
             <h1>Eastern India's <span>Hidden Gems</span></h1>
-            <p class="font-accent text-xl md:text-2xl text-forest-muted italic tracking-wide max-w-xl" data-testid="hero-subtitle" style="opacity: 1; transform: none;">Where Nature Meets the Sacred</p>
-            <button class="mt-12 px-8 py-4 border border-forest-gold/50 text-forest-gold font-body text-sm tracking-widest uppercase hover:bg-forest-gold/10 transition-all duration-500" data-testid="hero-cta-button" style="opacity: 1; transform: none; border-color: rgba(212, 163, 115, 0.5);" onclick="document.querySelector('.filter-section').scrollIntoView({behavior:'smooth'})">Explore Hidden Gems</button>
+
+            <p class="font-accent text-xl md:text-2xl text-forest-muted italic tracking-wide max-w-xl"
+               data-testid="hero-subtitle">
+               Where Nature Meets the Sacred
+            </p>
+
+            <button class="mt-12 px-8 py-4 border border-forest-gold/50 text-forest-gold font-body text-sm tracking-widest uppercase hover:bg-forest-gold/10 transition-all duration-500"
+                    data-testid="hero-cta-button"
+                    onclick="document.querySelector('.filter-section').scrollIntoView({behavior:'smooth'})">
+            Explore Hidden Gems
+            </button>
+        </div>
+        
+        <!-- MOBILE HAMBURGER -->
+        <div class="hamburger" id="hamburger">☰</div>
+
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="experiences.html">Experiences</a>
+            <a href="travel-guide.html">Travel Guide</a>
+            <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </div>
 
         <!-- RIGHT SIDE NAVIGATION LINKS -->
@@ -920,6 +977,25 @@
 
         // Load on start
         document.addEventListener('DOMContentLoaded', loadData);
+        
+        // ===== MOBILE HAMBURGER MENU TOGGLE =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (hamburger && mobileMenu) {
+           hamburger.addEventListener('click', () => {
+               mobileMenu.style.display =
+                   mobileMenu.style.display === 'block' ? 'none' : 'block';
+           });
+ 
+           // Close menu when clicking a link
+          document.querySelectorAll('.mobile-menu a').forEach(link => {
+              link.addEventListener('click', () => {
+                  mobileMenu.style.display = 'none';
+              });
+          });
+        }
+
     </script>
 </body>
 </html>
